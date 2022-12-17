@@ -18,7 +18,7 @@ public class Recipes {
 	@Column(name="image_url")
 	private String imageUrl;
 	@Column(name="time_to_complete")
-	private int timeToComplete;
+	private Integer timeToComplete;
 
 	@Override
 	public String toString() {
@@ -69,11 +69,11 @@ public class Recipes {
 		this.imageUrl = imageUrl;
 	}
 
-	public int getTimeToComplete() {
+	public Integer getTimeToComplete() {
 		return timeToComplete;
 	}
 
-	public void setTimeToComplete(int timeToComplete) {
+	public void setTimeToComplete(Integer timeToComplete) {
 		this.timeToComplete = timeToComplete;
 	}
 

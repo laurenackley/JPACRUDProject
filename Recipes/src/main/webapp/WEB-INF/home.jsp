@@ -11,11 +11,11 @@
 	<h1>This is where my web page will begin at. Where I can show
 		recipes</h1>
 	Looking for a recipe by it's Id!
-	<form action="getRecipe.do" method="POST">
+	<form action="getRecipe.do" method="GET">
 		Recipe ID: <input type="number" name="rId" /> <input type="submit"
 			value="Show Recipe" />
 	</form>
-	<form action="createRecipe.do" method="GET">
+	<form action="createRecipe.do" method="POST">
 	<h5>Create a Recipe</h5><br> 
 	<label for="name">Name:</label>
 	<input type="text" name="name" required> 
@@ -27,11 +27,10 @@
 	<input type="text" name="instructions" required> 
 
 	<label for="imageUrl">Enter an image URL if you'd like:</label>
-	<input type="text" name="name"> 
+	<input type="text" name="imageUrl"> 
 
 	<label for="timeToComplete">Approximate time it would take to complete:</label>
 	<input type="number" name="timeToComplete" required> 
-	<input type="text" hidden="true" name="id" value="${recipe.id }">
 	<input type="submit" value="Create"> 	
 	</form>
 	
