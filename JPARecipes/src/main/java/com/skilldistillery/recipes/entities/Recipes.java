@@ -12,11 +12,19 @@ public class Recipes {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String type;
+	@Column(name="oven_temperature")
+	private Integer ovenTemperature;
 	private String instructions;
 	@Column(name="image_url")
 	private String imageUrl;
-	private Boolean yummy;
+	@Column(name="time_to_complete")
+	private int timeToComplete;
+
+	@Override
+	public String toString() {
+		return "Recipes [id=" + id + ", name=" + name + ", ovenTemperature=" + ovenTemperature + ", instructions="
+				+ instructions + ", imageUrl=" + imageUrl + ", timeToComplete=" + timeToComplete + "]";
+	}
 
 	public Recipes() {
 	}
@@ -37,12 +45,12 @@ public class Recipes {
 		this.name = name;
 	}
 
-	public String getType() {
-		return type;
+	public Integer getOvenTemperature() {
+		return ovenTemperature;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setOvenTemperature(Integer ovenTemperature) {
+		this.ovenTemperature = ovenTemperature;
 	}
 
 	public String getInstructions() {
@@ -61,18 +69,14 @@ public class Recipes {
 		this.imageUrl = imageUrl;
 	}
 
-	public Boolean getYummy() {
-		return yummy;
+	public int getTimeToComplete() {
+		return timeToComplete;
 	}
 
-	public void setYummy(Boolean yummy) {
-		this.yummy = yummy;
+	public void setTimeToComplete(int timeToComplete) {
+		this.timeToComplete = timeToComplete;
 	}
 
-	@Override
-	public String toString() {
-		return "Recipes [id=" + id + ", name=" + name + ", type=" + type + ", instructions=" + instructions
-				+ ", imageUrl=" + imageUrl + ", yummy=" + yummy + "]";
-	}
+
 
 }
