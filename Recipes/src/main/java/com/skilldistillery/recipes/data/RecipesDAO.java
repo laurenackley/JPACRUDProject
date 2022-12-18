@@ -12,4 +12,5 @@ public interface RecipesDAO {
 	Recipes create(Recipes recipeOriginal);
 	Recipes update(int recipeId, Recipes recipe);
 	boolean delete(int recipeId);
+//	List<Recipes> findByKeyword(String instructions);
 }

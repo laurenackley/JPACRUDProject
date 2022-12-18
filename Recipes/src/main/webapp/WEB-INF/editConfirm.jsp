@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Edit</title>
+<%@ include file="bootstrapHeader.jsp" %>
+
 </head>
 <body>
 <form action="editRecipe.do" method="post">

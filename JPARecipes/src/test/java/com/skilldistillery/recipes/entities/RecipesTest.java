@@ -2,6 +2,7 @@ package com.skilldistillery.recipes.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -48,6 +49,7 @@ class RecipesTest {
 		assertNotNull(recipe);
 		assertEquals("Oatmeal Butterscotch", recipe.getName());
 		assertEquals(90, recipe.getTimeToComplete());
+		assertTrue(recipe.getInstructions().contains("egg"));
 	}
 
 }

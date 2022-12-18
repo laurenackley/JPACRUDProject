@@ -1,5 +1,7 @@
 package com.skilldistillery.recipes.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +23,25 @@ public class RecipeController {
 		return "home";
 	}
 
+//	@RequestMapping(path="search.do")
+//	public String findRecipeKeyword(@RequestParam String instructions, Model model) {
+//		List<Recipes> r = dao.findByKeyword(instructions);
+//		System.out.println("************************************");
+//		
+//		System.out.println(r);
+//		System.out.println("************************************");
+//		model.addAllAttributes(r);
+//		if(r.size() == 0  )  {
+//			return "error";
+//		}
+//		return "result";
+//
+//	}
+	
 	@RequestMapping(path = "getRecipe.do")
 	public String findRecipe(@RequestParam int rId, Model model) {
 		Recipes r = dao.findById(rId);
+		System.out.println(r);
 		model.addAttribute("recipe", r);
 		if (r == null) {
 			return "error";

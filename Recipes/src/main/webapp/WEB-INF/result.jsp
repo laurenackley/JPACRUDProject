@@ -6,24 +6,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${recipe.name }</title>
+<title>Result</title>
+<%@ include file="bootstrapHeader.jsp" %>
 </head>
 <body>
 <h2>${recipe.name }</h2>
-<ul> 
+
 
 <c:choose>
 				<c:when test="${empty recipe.ovenTemperature }">
 <li> No oven needed for this recipe. </li>
 				</c:when>
 				<c:otherwise>
-<li> Oven Temperature: ${recipe.ovenTemperature}</li>
+				Oven Temperature:
+				<ul>
+<li>${recipe.ovenTemperature}</li>
+				</ul>
 				</c:otherwise>
 		</c:choose>
-
+Instructions:
+<ul>
 <li> 
 ${recipe.instructions }
 </li>
+</ul>
+
+Time it will take to complete:
+<ul>
 <li>
 ${recipe.timeToComplete }
 </li>

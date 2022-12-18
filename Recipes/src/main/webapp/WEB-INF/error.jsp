@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>No such recipe found</title>
+<%@ include file="bootstrapHeader.jsp" %>
 </head>
 <body>
 No such recipe found

@@ -6,13 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Recipes</title>
+<%@ include file="bootstrapHeader.jsp" %>
+<link rel="stylesheet" href="css/stylesheet.css"></link> 
 </head>
-<body>
-	<h1>This is where my web page will begin at. Where I can show
-		recipes</h1>
+<body id="body">
+	<h1>Welcome to my recipe database! </h1>
+	<p class="intro"> 
+		Here you will find some of my favorite recipes to make! 
+	</p>
+<!-- 		Search for a recipe by a keyword:
+		<form action="search.do" method="GET">
+		Keyword: 
+		<input type="text" name="instructions"/>
+		<input type="submit" value="Search">
+		</form> -->
+		
+		
 	Looking for a recipe by it's Id!
 	<form action="getRecipe.do" method="GET">
-		Recipe ID: <input type="number" name="rId" /> <input type="submit"
+		Recipe ID: 
+		<input type="number" name="rId" />
+		 <input type="submit"
 			value="Show Recipe" />
 	</form>
 	<form action="createRecipe.do" method="POST">

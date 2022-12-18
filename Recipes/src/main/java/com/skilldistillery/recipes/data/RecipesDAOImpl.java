@@ -1,5 +1,6 @@
 package com.skilldistillery.recipes.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -19,9 +20,22 @@ public class RecipesDAOImpl implements RecipesDAO {
 
 	@Override
 	public Recipes findById(int recipeId) {
-
 		return em.find(Recipes.class, recipeId);
 	}
+
+//	@Override
+//	public List<Recipes> findByKeyword(String instructions) {
+//		List<Recipes> recipe = new ArrayList<>();
+//		String jpql = "SELECT r FROM Recipes r WHERE r.instructions LIKE ':instructions'";
+//		System.out.println(
+//				em.find(Recipes.class, instructions)
+//				
+//				
+//				);
+//		
+//		return em.createQuery(jpql, Recipes.class).getResultList();
+//
+//	}
 
 	@Override
 	public List<Recipes> findAll() {
@@ -32,7 +46,7 @@ public class RecipesDAOImpl implements RecipesDAO {
 	@Override
 	public Recipes create(Recipes recipeOriginal) {
 		em.persist(recipeOriginal);
-		
+
 		return recipeOriginal;
 	}
 
@@ -40,14 +54,14 @@ public class RecipesDAOImpl implements RecipesDAO {
 	public Recipes update(int recipeId, Recipes recipe) {
 
 		Recipes recipeUpdate = em.find(Recipes.class, recipeId);
-		if(recipeUpdate != null) {
+		if (recipeUpdate != null) {
 			recipeUpdate.setName(recipe.getName());
 			recipeUpdate.setImageUrl(recipe.getImageUrl());
 			recipeUpdate.setInstructions(recipe.getInstructions());
 			recipeUpdate.setOvenTemperature(recipe.getOvenTemperature());
 			recipeUpdate.setTimeToComplete(recipe.getTimeToComplete());
 		}
-				
+
 		return recipeUpdate;
 	}
 
@@ -55,12 +69,12 @@ public class RecipesDAOImpl implements RecipesDAO {
 	public boolean delete(int recipeId) {
 		boolean success = false;
 		Recipes r = em.find(Recipes.class, recipeId);
-		
-		if(r != null) {
+
+		if (r != null) {
 			em.remove(r);
-			success = ! em.contains(r);
+			success = !em.contains(r);
 		}
-		
+
 		return success;
 	}
 
