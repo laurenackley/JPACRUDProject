@@ -8,8 +8,9 @@
 <meta charset="UTF-8">
 <title>Result</title>
 <%@ include file="bootstrapHeader.jsp" %>
+<link rel="stylesheet" href="css/stylesheet.css"></link> 
 </head>
-<body>
+<body id="body">
 <h2>${recipe.name }</h2>
 
 
@@ -20,7 +21,7 @@
 				<c:otherwise>
 				Oven Temperature:
 				<ul>
-<li>${recipe.ovenTemperature}</li>
+<li>${recipe.ovenTemperature}°F</li>
 				</ul>
 				</c:otherwise>
 		</c:choose>
@@ -34,7 +35,7 @@ ${recipe.instructions }
 Time it will take to complete:
 <ul>
 <li>
-${recipe.timeToComplete }
+${recipe.timeToComplete } minutes
 </li>
 </ul>
 <img src="${recipe.imageUrl }" alt="BakedGood" width="199" height="300">
@@ -42,13 +43,19 @@ ${recipe.timeToComplete }
  Do you want to edit this recipe?
  <form action="edit.do" method="post">
  <input type="text" hidden="true" name="id" value="${recipe.id }"> 
- <input type="submit" value="Edit">
+<button type="submit" class="btn btn-outline-secondary" value="edit">Edit</button>
+ 
+<!--  <input type="submit" value="Edit"> -->
  </form>
  <br>
  Do you want to delete this recipe?
  <form action="deleteYes.do">
  <input type="text" hidden="true" name="id" value="${recipe.id }">
- <input type="submit" value="Delete">
+
+<button type="submit" class="btn btn-outline-danger" value="delete">Delete</button>
+
+
+<!--  <input type="submit" value="Delete"> -->
  </form>
  <%@ include file="nav.jsp" %>
  

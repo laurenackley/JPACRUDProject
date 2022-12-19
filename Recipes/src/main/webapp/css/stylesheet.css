@@ -1,6 +1,10 @@
-#body{
+#body {
 	margin: 25px;
+	background: rgb(225, 233, 108);
+	background: radial-gradient(circle, rgba(225, 233, 108, 1) 0%,
+		rgba(252, 70, 152, 0.6937149859943977) 100%);
 }
-.intro{
-	font-style:italic;
+
+.intro {
+	font-style: italic;
 }

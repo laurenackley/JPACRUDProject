@@ -6,9 +6,10 @@
 <meta charset="UTF-8">
 <title>Edit</title>
 <%@ include file="bootstrapHeader.jsp" %>
+<link rel="stylesheet" href="css/stylesheet.css"></link> 
 
 </head>
-<body>
+<body id="body">
 <form action="editRecipe.do" method="post">
 
 <label for="name">Name:</label>
@@ -17,14 +18,14 @@
 <label for="ovenTemperature">Oven Temperature: </label>
 <input type="number" name="ovenTemperature" value="${recipe.ovenTemperature }"><br>
 
-<label for="instructions">Instructions:</label>
-<input type="text" name="instructions" value="${recipe.instructions }" required><br>
-
-<label for="imageUrl">Image URL:</label>
-<input type="text" name="imageUrl" value="${recipe.imageUrl }"><br>
-
 <label for="timeToComplete">Approximate time it would take to complete:</label>
 <input type="number" name="timeToComplete" value="${recipe.timeToComplete }" required><br>
+
+<label for="imageUrl" id="url">Image URL:</label>
+<input type="text" name="imageUrl" value="${recipe.imageUrl }"><br>
+
+<label for="instructions" id="instructions">Instructions:</label>
+<input type="text" name="instructions" value="${recipe.instructions }" required><br>
 
  <input type="text" hidden="true" name="id" value="${recipe.id }"> 
 

@@ -10,19 +10,19 @@
 <link rel="stylesheet" href="css/stylesheet.css"></link> 
 </head>
 <body id="body">
-	<h1>Welcome to my recipe database! </h1>
+	<h1>Welcome to my Recipe Database! </h1>
 	<p class="intro"> 
 		Here you will find some of my favorite recipes to make! 
 	</p>
-<!-- 		Search for a recipe by a keyword:
+<!-- 	Search for a recipe you can make given a keyword:
 		<form action="search.do" method="GET">
 		Keyword: 
-		<input type="text" name="instructions"/>
+		<input type="text" name="keyword"/>
 		<input type="submit" value="Search">
-		</form> -->
+		</form>  -->
 		
 		
-	Looking for a recipe by it's Id!
+	<h3>Looking for a recipe by its ID!</h3>
 	<form action="getRecipe.do" method="GET">
 		Recipe ID: 
 		<input type="number" name="rId" />
@@ -30,21 +30,22 @@
 			value="Show Recipe" />
 	</form>
 	<form action="createRecipe.do" method="POST">
-	<h5>Create a Recipe</h5><br> 
+	<h3>Create a Recipe</h3><br> 
 	<label for="name">Name:</label>
 	<input type="text" name="name" required> 
 	<!-- 	LOOK UP HOW TO DO A HOOVER WARNING  -->
-	<label for="ovenTemperature">Oven:</label>
+	<label for="ovenTemperature">Oven Temperature:</label>
 	<input type="number" name="ovenTemperature"> 
 
-	<label for="instructions">Instructions:</label>
+	<label for="timeToComplete">Approximate time to complete:</label>
+	<input type="number" name="timeToComplete" required> 
+
+	<label for="instructions" id="instructions">Instructions:</label>
 	<input type="text" name="instructions" required> 
 
-	<label for="imageUrl">Enter an image URL if you'd like:</label>
+	<label for="imageUrl" id="url">Enter an image URL:</label>
 	<input type="text" name="imageUrl"> 
 
-	<label for="timeToComplete">Approximate time it would take to complete:</label>
-	<input type="number" name="timeToComplete" required> 
 	<input type="submit" value="Create"> 	
 	</form>
 	

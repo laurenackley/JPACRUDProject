@@ -25,18 +25,13 @@ public class RecipesDAOImpl implements RecipesDAO {
 
 //	@Override
 //	public List<Recipes> findByKeyword(String instructions) {
-//		List<Recipes> recipe = new ArrayList<>();
-//		String jpql = "SELECT r FROM Recipes r WHERE r.instructions LIKE ':instructions'";
-//		System.out.println(
-//				em.find(Recipes.class, instructions)
-//				
-//				
-//				);
-//		
-//		return em.createQuery(jpql, Recipes.class).getResultList();
-//
+//		String jpql = "SELECT r FROM Recipes r WHERE r.instructions LIKE '%:instructions%'";
+//		List<Recipes> recipes = (em.createQuery(jpql, Recipes.class).setParameter("instructions", instructions).getResultList());
+//		System.out.println(recipes);
+//		return recipes;
 //	}
 
+	
 	@Override
 	public List<Recipes> findAll() {
 		String jpql = "SELECT r FROM Recipes r";
